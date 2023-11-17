@@ -1,5 +1,5 @@
 from openai import OpenAI, api_key
-import cv2
+from PIL import Image
 
 with open("API_KEY.txt", "r") as API_file:
     API_KEY = API_file.read()
@@ -8,19 +8,22 @@ client = OpenAI(api_key=API_KEY)
 
 
 def change_outfit(model_img: str, outfit_img: str):
-    img_rbg = cv2.imread(model_img)
-    img_gray = cv2.cvtColor(img_rbg, cv2.COLOR_BGR2GRAY)
+    model = Image.open(model_img)
+    mask = Image.open(outfit_img)
+    size = mask.size
+    model = model.resize(size, Image.BILINEAR)
+    model.save("model.png")
 
-    # response = client.images.generate(
-    #     image=model_img,
-    #     mask=outfit_img,
-    #     size="1024x1024",
-    #     quality="standard",
-    #     n=1,
-    # )
+    response = client.images.edit(
+        image=open("model.png", "rb"),
+        mask=open(outfit_img, "rb"),
+        prompt="boy has yellow dress",
+        size="1024x1024",
+        n=1,
+    )
 
     output_img_url = response.data[0].url
     print(output_img_url)
 
 
-change_outfit("da", "Ddada")
+change_outfit("mati123.png", "suknia.png")

@@ -3,3 +3,5 @@ venv/
 env/
 
 API_KEY.txt
+*.png
+*.jpg
