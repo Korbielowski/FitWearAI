@@ -1,2 +1,2 @@
 # hackathon
-We don't know what we are doing here
+Simple web app for displaying Your model (You) with cloths You choose using AI.
