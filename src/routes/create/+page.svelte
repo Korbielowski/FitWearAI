@@ -1,15 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>FitWearAI</title>
-  <link href="{{url_for('static',filename='css/output.css')}}" rel="stylesheet">
-</head>
-
-<body>
-
-<div class="max-w-screen-md mx-auto p-5">
+<div class="my-4 max-w-screen-md mx-auto p-5">
   <div class="text-center mb-16">
     <p class="mt-4 text-sm leading-7 text-gray-500 font-regular uppercase">
         Collection
@@ -37,17 +26,17 @@
       <input class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-last-name" type="text" placeholder="https://link-for-stuff.com">
     </div>
 
-    <div class="flex justify-center w-full px-3 mt-3">
-      <div class="w-1/3 h-24 mr-3 bg-emerald-500"></div>
-      <div class="w-1/3 h-24 mr-3 bg-emerald-500"></div>
-      <div class="w-1/3 h-24 bg-emerald-500"></div>
+    <div class="flex justify-center w-full px-3 mt-3 ">
+      <div class="w-1/3  mr-3  object-contain"><img src="/shirt.jpg"></div>
+      <div class="w-1/3  mr-3 object-contain "><img src="/pants.jpg"></div>
+      <div class="w-1/3  object-contain"><img src="/boots.jpg"></div>
     </div>
 
     <div class="flex justify-start  w-full px-3 mt-3">
       <div class="md:flex md:items-center">
       </div>
-      <button class="shadow mr-3 bg-rose-400 hover:bg-emerald-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-6 rounded" type="submit">
-        My Profile
+      <button class="shadow mr-3 bg-rose-400 hover:bg-rose-300 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-6 rounded" type="submit">
+        <a href="/collections"> My Profile</a>
       </button>
       <button class="shadow mr-3 bg-emerald-600 hover:bg-emerald-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-6 rounded" type="submit">
         Create
@@ -58,12 +47,8 @@
   </form>
 
   <div class="w-full md:w-1/2">
-    <img src="{{url_for('static',filename='img/zara.png')}}" alt="">
+    <img src="/avatar.png">
   </div>
 
 </div>
 </div>
-
-</body>
-
-</html>
