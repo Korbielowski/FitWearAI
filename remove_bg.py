@@ -8,6 +8,5 @@ def remove_bg(img_source: str) -> Image:
 
     output_img.save(img_source.replace(".jpg", "_output.png"))
 
-
-# return output_img.save(img_source.removesuffix(".png").join("_output.png"))
-remove_bg("20231117_222909.jpg")
+    # return output_img.save(img_source.removesuffix(".png").join("_output.png"))
+    remove_bg("20231117_222909.jpg")
